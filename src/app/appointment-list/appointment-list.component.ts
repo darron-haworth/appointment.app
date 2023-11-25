@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Appointment } from '../models/appointment';
 import { OnInit } from '@angular/core';
+import moment from 'moment';
 
 @Component({
   selector: 'app-appointment-list',
@@ -12,6 +13,7 @@ export class AppointmentListComponent implements OnInit {
   
   newAppointmentTitle: string = "";
   newAppointmentDate: Date = new Date();
+  thisDay: Date = new Date();
 
   appointments: Appointment[] = []
 
@@ -25,7 +27,8 @@ export class AppointmentListComponent implements OnInit {
       let newAppointment: Appointment = { 
         id: Date.now(), 
         title: this.newAppointmentTitle, 
-        date: this.newAppointmentDate 
+        date: this.newAppointmentDate ,
+        fromDate: '(' + moment(this.thisDay).diff(moment(this.newAppointmentDate), 'day').toLocaleString() + ' days)'
       }
       this.appointments.push(newAppointment)
       this.newAppointmentTitle = "";
