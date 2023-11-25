@@ -28,7 +28,7 @@ export class AppointmentListComponent implements OnInit {
         id: Date.now(), 
         title: this.newAppointmentTitle, 
         date: this.newAppointmentDate ,
-        fromDate: moment(this.thisDay).diff(moment(this.newAppointmentDate), 'day').toLocaleString() + ' days'
+        soberDays: moment(this.thisDay).diff(moment(this.newAppointmentDate), 'day').toLocaleString() + ' days'
       }
       this.appointments.push(newAppointment)
       this.newAppointmentTitle = "";
