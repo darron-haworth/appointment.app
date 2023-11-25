@@ -17,13 +17,12 @@
 
         <ul class="list-group mt-3">
             <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let appt of appointments; index as i">
-            {{appt.title}} {{appt.date | date: 'yyyy.MM.dd'}}, {{appt.fromDate}}
+            {{appt.title}} {{appt.date | date: 'MM/dd/yyyy'}} ({{appt.fromDate}})
             <button class="btn btn-danger" (click)="deleteAppointment(i)">Delete</button>
             </li>
         </ul>
     </div>
 </div>
-
 
 
 
