@@ -8,5 +8,5 @@ import { Appointment } from '../models/appointment';
 })
 export class AppointmentListComponent {
 
-  appointment: string = "Take Brooklyn and Jersey for a walk";
+  appointment: Appointment =  { id: 1, title: "Take dog for a walk", date: new Date('2023-07-30')}
 }
